@@ -95,6 +95,13 @@ view: users {
     }
   }
 
+  dimension: gender2 {
+    type: string
+    sql: ${TABLE}.gender ;;
+    html: <a href="/dashboards/51?First%20Name={{ value }}">Drill to Dash</a> ;;
+  }
+
+
   dimension_group: created_at {
     type: time
     sql: ${TABLE}.created_at ;;
