@@ -98,7 +98,16 @@ view: users {
   dimension: gender2 {
     type: string
     sql: ${TABLE}.gender ;;
-    html: <a href="/dashboards/51?First%20Name={{ value }}">Drill to Dash</a> ;;
+    html: <a href="/dashboards/51?First%20Name={{ value }}">{{value}}</a> ;;
+  }
+
+  dimension: gender_3 {
+    type: string
+    sql: ${TABLE}.gender ;;
+    link: {
+      label: "level 2 dash"
+      url: "/dashboards/51?First%20Name={{ value }}"
+    }
   }
 
 
