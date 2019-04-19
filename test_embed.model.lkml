@@ -4,7 +4,7 @@ connection: "thelook"
 include: "*.view"
 
 # include all the dashboards
-include: "*.dashboard"
+# include: "*.dashboard"
 
 # explore: events {
 #
@@ -24,10 +24,10 @@ include: "*.dashboard"
 # }
 #
 explore: order_items {
-  access_filter: {
-    field: users.id
-    user_attribute: test_user_id
-  }
+#   access_filter: {
+#     field: users.id
+#     user_attribute: test_user_id
+#   }
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
