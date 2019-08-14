@@ -73,7 +73,11 @@ view: images_explore {
 
     dimension: gender {
       type: string
-      sql: ${TABLE}.gender ;;
+#       sql: ${TABLE}.gender ;;
+      sql: CASE WHEN ${TABLE}.gender = "m" THEN "MALE"
+      WHEN ${TABLE}.gender = "f" THEN "FEMALE"
+      ELSE NULL
+      END ;;
       html:  <img src="https://www.image.ie/images/no-image.png" style="width:100px;height:100;"/>
       <br /><a><center> {{ value }} </center></a>;;
     }
